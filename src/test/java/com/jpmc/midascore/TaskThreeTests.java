@@ -1,5 +1,6 @@
 package com.jpmc.midascore;
 
+import com.jpmc.midascore.repository.UserRepository; // Added this import
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,6 +24,10 @@ public class TaskThreeTests {
     @Autowired
     private FileLoader fileLoader;
 
+    // Added the UserRepository here so the debugger can use it!
+    @Autowired
+    private UserRepository userRepository;
+
     @Test
     void task_three_verifier() throws InterruptedException {
         userPopulator.populate();
@@ -32,7 +37,7 @@ public class TaskThreeTests {
         }
         Thread.sleep(2000);
 
-
+        // Put your RED DOT BREAKPOINT on the line below!
         logger.info("----------------------------------------------------------");
         logger.info("----------------------------------------------------------");
         logger.info("----------------------------------------------------------");
